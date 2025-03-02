@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Failure Prediction</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {}
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background: url('hacks.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-900 bg-opacity-50">
+
+    <div class="bg-gray-900 bg-opacity-80 text-white p-8 rounded-xl shadow-lg w-96">
+        <h2 class="text-2xl font-bold mb-4 text-center">Machine Failure Prediction</h2>
+
+        <form action="/" method="POST">
+            <label for="air_temp" class="block mb-2">Air Temperature [K]:</label>
+            <input id="air_temp" type="number" step="0.01" name="air_temp" required 
+                class="w-full px-3 py-2 mb-4 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+
+            <label for="process_temp" class="block mb-2">Process Temperature [K]:</label>
+            <input id="process_temp" type="number" step="0.01" name="process_temp" required 
+                class="w-full px-3 py-2 mb-4 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+
+            <label for="rotational_speed" class="block mb-2">Rotational Speed [rpm]:</label>
+            <input id="rotational_speed" type="number" step="1" name="rotational_speed" required 
+                class="w-full px-3 py-2 mb-4 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+
+            <label for="torque" class="block mb-2">Torque [Nm]:</label>
+            <input id="torque" type="number" step="0.01" name="torque" required 
+                class="w-full px-3 py-2 mb-4 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+
+            <label for="tool_wear" class="block mb-2">Tool Wear [min]:</label>
+            <input id="tool_wear" type="number" step="1" name="tool_wear" required 
+                class="w-full px-3 py-2 mb-4 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+
+            <label for="machine_type" class="block mb-2">Machine Type:</label>
+            <select id="machine_type" name="machine_type" required 
+                class="w-full px-3 py-2 mb-4 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                <option value="L">Low</option>
+                <option value="M">Medium</option>
+                <option value="H">High</option>
+            </select>
+
+            <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded-lg">Predict</button>
+        </form>
+    </div>
+
+</body>
+</html>
